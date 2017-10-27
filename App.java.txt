@@ -1,0 +1,17 @@
+public class App {
+	
+	public static void main(String[] args) throws MalformedURLException {
+		
+		URL rightUrl = new URL("http://cursos.triadworks.com.br/assets/css/main.css");
+		URL redirectableUrl = new URL("http://www.triadworks.com.br/assets/css/main.css"); // redirected to cursos.triadworks.com.br
+
+		Downloader downloader = new Downloader();
+		
+		System.out.println("Downloading file through right Url...");
+		downloader.download(rightUrl, new File("main-ok.css"));
+		
+		System.out.println("Downloading file through a redirectable Url...");
+		downloader.download(redirectableUrl, new File("main-redirected.css"));
+		
+	}
+}
